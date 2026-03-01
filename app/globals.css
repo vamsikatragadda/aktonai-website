@@ -20,7 +20,8 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-400 to-white;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, #FFFFFF, #818CF8, #FFFFFF);
     background-size: 200% auto;
     animation: gradient 4s linear infinite;
   }

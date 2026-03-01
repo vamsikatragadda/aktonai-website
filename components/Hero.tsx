@@ -90,9 +90,24 @@ export default function Hero() {
         >
           We Make Businesses
           <br />
-          <span className="relative inline-block bg-gradient-to-r from-gray-100 via-white to-gray-300 bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_4s_linear_infinite]">
+          <span
+            className="relative inline-block bg-clip-text text-transparent bg-[length:300%_auto] animate-[gradient_6s_ease-in-out_infinite]"
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, #FFFFFF 0%, #C7D2FE 20%, #818CF8 40%, #A78BFA 60%, #C7D2FE 80%, #FFFFFF 100%)",
+            }}
+          >
             AI-Native
-            <span className="absolute inset-0 bg-gradient-to-r from-gray-100 via-white to-gray-300 bg-clip-text text-transparent blur-2xl opacity-50" aria-hidden="true">AI-Native</span>
+            <span
+              className="absolute inset-0 bg-clip-text text-transparent blur-2xl opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(135deg, #FFFFFF 0%, #818CF8 30%, #A78BFA 50%, #818CF8 70%, #FFFFFF 100%)",
+              }}
+              aria-hidden="true"
+            >
+              AI-Native
+            </span>
           </span>
         </motion.h1>
 
