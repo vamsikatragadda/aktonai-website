@@ -1,87 +1,54 @@
 "use client";
 
-// ---------------------------------------------------------------------------
-// LogoCloud – "Trusted By" social-proof marquee
-// ---------------------------------------------------------------------------
+import { motion } from "framer-motion";
 
 const companies = [
-  { name: "TechScale", style: "font-extrabold tracking-tight" },
-  { name: "DataFlow", style: "font-light tracking-[0.25em] uppercase" },
-  {
-    name: "Meridian Health",
-    style: "font-semibold italic",
-  },
-  { name: "NovaPay", style: "font-black tracking-tighter" },
-  { name: "CloudBase", style: "font-medium tracking-widest uppercase text-[15px]" },
-  { name: "Synthetix", style: "font-extrabold tracking-tight" },
-  { name: "PulseAI", style: "font-bold" },
-  { name: "Quantum Corp", style: "font-light tracking-[0.3em] uppercase text-[14px]" },
+  { name: "Tesla", style: "font-extrabold tracking-tight" },
+  { name: "Meta", style: "font-bold" },
+  { name: "Google", style: "font-medium tracking-wide" },
 ];
-
-// Small decorative elements that make each "logo" feel distinct
-function LogoDecorator({ index }: { index: number }) {
-  const variant = index % 4;
-  if (variant === 0) {
-    // Small square before text
-    return (
-      <span className="mr-2 inline-block h-2 w-2 rounded-sm bg-gradient-to-br from-akton-400/60 to-cyber-400/60" />
-    );
-  }
-  if (variant === 1) {
-    // Dot separator
-    return (
-      <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-white/30" />
-    );
-  }
-  if (variant === 2) {
-    // Two small bars
-    return (
-      <span className="mr-2 inline-flex items-center gap-0.5">
-        <span className="inline-block h-3 w-[3px] rounded-full bg-akton-400/50" />
-        <span className="inline-block h-2 w-[3px] rounded-full bg-cyber-400/40" />
-      </span>
-    );
-  }
-  // Diamond
-  return (
-    <span className="mr-2 inline-block h-2 w-2 rotate-45 rounded-[1px] border border-white/25" />
-  );
-}
 
 export default function LogoCloud() {
   return (
-    <section className="relative overflow-hidden bg-akton-950 py-16">
+    <section className="relative overflow-hidden bg-[#0A0A0A] py-16">
+      {/* Fade-in from top */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#0A0A0A] to-transparent z-10" />
+
       {/* Subtle top divider line */}
       <div className="mx-auto mb-10 h-px w-2/3 max-w-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      {/* Heading */}
-      <p className="mb-10 text-center text-sm font-medium uppercase tracking-[0.2em] text-white/40">
-        Trusted by innovative companies
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center"
+      >
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/35 mb-8">
+          Built by engineers from
+        </p>
 
-      {/* Marquee container */}
-      <div className="relative">
-        {/* Left fade */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-akton-950 to-transparent sm:w-40" />
-        {/* Right fade */}
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-akton-950 to-transparent sm:w-40" />
-
-        {/* Scrolling track — duplicated for seamless loop */}
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...companies, ...companies].map((company, i) => (
+        <div className="flex items-center justify-center gap-10 sm:gap-16 md:gap-20">
+          {companies.map((company) => (
             <span
-              key={i}
-              className={`mx-8 inline-flex flex-shrink-0 items-center text-lg text-white/40 select-none sm:mx-12 sm:text-xl ${company.style}`}
+              key={company.name}
+              className={`text-2xl sm:text-3xl text-white/50 select-none ${company.style}`}
             >
-              <LogoDecorator index={i} />
               {company.name}
             </span>
           ))}
         </div>
-      </div>
+
+        <p className="mt-6 text-sm text-white/35">
+          who scaled AI to millions of users
+        </p>
+      </motion.div>
 
       {/* Subtle bottom divider line */}
       <div className="mx-auto mt-10 h-px w-2/3 max-w-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      {/* Fade-out to bottom */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0A0A] to-transparent z-10" />
     </section>
   );
 }

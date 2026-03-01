@@ -8,27 +8,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        akton: {
-          50: '#eef4ff',
-          100: '#d9e5ff',
-          200: '#bcd2ff',
-          300: '#8eb5ff',
-          400: '#598dff',
-          500: '#3366ff',
-          600: '#1a44f5',
-          700: '#1333e1',
-          800: '#162bb6',
-          900: '#182a8f',
-          950: '#0a0f2e',
+        verve: {
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0A0A0A',
         },
-        cyber: {
-          400: '#22d3ee',
-          500: '#06b6d4',
+        accent: {
+          400: '#D4D4D4',
+          500: '#A3A3A3',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',
@@ -62,8 +62,8 @@ const config: Config = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(51, 102, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(51, 102, 255, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.15)' },
+          '100%': { boxShadow: '0 0 40px rgba(255, 255, 255, 0)' },
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },

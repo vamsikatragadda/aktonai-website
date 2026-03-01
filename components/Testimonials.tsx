@@ -10,33 +10,33 @@ import { Star } from 'lucide-react'
 const testimonials = [
   {
     quote:
-      "AktonAI transformed our customer service. Their AI agents handle 80% of inquiries autonomously, and our customers can't tell the difference.",
+      "AktonAI didn't just automate our support\u2014they made our entire customer experience AI-native. 80% of inquiries are handled autonomously, and satisfaction is at an all-time high.",
     name: 'Sarah Chen',
     title: 'VP Operations',
     company: 'TechScale Inc.',
     initials: 'SC',
-    gradientFrom: 'from-akton-500',
-    gradientTo: 'to-cyber-500',
+    gradientFrom: 'from-white',
+    gradientTo: 'to-gray-400',
   },
   {
     quote:
-      'The ROI was immediate. Within 30 days, we saw a 5x return on our investment. The team at AktonAI truly understands business automation.',
+      "Within 30 days we saw 5x ROI. AktonAI's approach to making businesses AI-native is unlike anything else in the market.",
     name: 'Marcus Rivera',
     title: 'CEO',
     company: 'DataFlow Solutions',
     initials: 'MR',
-    gradientFrom: 'from-cyber-400',
-    gradientTo: 'to-akton-400',
+    gradientFrom: 'from-gray-400',
+    gradientTo: 'to-white',
   },
   {
     quote:
-      "What sets AktonAI apart is their approach\u2014they don't just build AI, they build AI that actually works for your specific business needs.",
+      "What makes AktonAI different is they don't bolt on AI\u2014they weave it into your operations so deeply it becomes part of your company's DNA.",
     name: 'Emily Watson',
     title: 'COO',
     company: 'Meridian Health',
     initials: 'EW',
-    gradientFrom: 'from-akton-400',
-    gradientTo: 'to-cyber-500',
+    gradientFrom: 'from-white/80',
+    gradientTo: 'to-gray-400',
   },
 ]
 
@@ -88,18 +88,18 @@ function TestimonialCard({
         aria-hidden
       />
 
-      <div className="relative h-full rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl overflow-hidden flex flex-col">
+      <div className="relative h-full rounded-2xl border border-white/10 bg-white/[0.03] shadow-sm overflow-hidden flex flex-col">
         {/* Top accent line */}
         <div
           className={`h-[2px] bg-gradient-to-r ${testimonial.gradientFrom} ${testimonial.gradientTo}`}
         />
 
         <div className="p-6 sm:p-8 flex flex-col flex-1">
-          {/* Large quote mark */}
+          {/* Large quote mark – gradient */}
           <svg
             viewBox="0 0 40 40"
             fill="none"
-            className="h-10 w-10 mb-4 opacity-20"
+            className="h-10 w-10 mb-4 opacity-30"
             aria-hidden="true"
           >
             <path
@@ -118,12 +118,12 @@ function TestimonialCard({
             />
             <defs>
               <linearGradient id="quote-grad-a" x1="2.5" y1="10" x2="17.5" y2="30">
-                <stop stopColor="#3366ff" />
-                <stop offset="1" stopColor="#06b6d4" />
+                <stop stopColor="#FFFFFF" />
+                <stop offset="1" stopColor="#A3A3A3" />
               </linearGradient>
               <linearGradient id="quote-grad-b" x1="22.5" y1="10" x2="37.5" y2="30">
-                <stop stopColor="#3366ff" />
-                <stop offset="1" stopColor="#06b6d4" />
+                <stop stopColor="#FFFFFF" />
+                <stop offset="1" stopColor="#A3A3A3" />
               </linearGradient>
             </defs>
           </svg>
@@ -133,7 +133,7 @@ function TestimonialCard({
 
           {/* Quote */}
           <blockquote className="mt-5 flex-1">
-            <p className="text-base sm:text-lg leading-relaxed text-white/70">
+            <p className="text-base sm:text-lg leading-relaxed text-white/50">
               &ldquo;{testimonial.quote}&rdquo;
             </p>
           </blockquote>
@@ -145,7 +145,7 @@ function TestimonialCard({
           <div className="flex items-center gap-4">
             {/* Avatar – gradient circle with initials */}
             <div
-              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${testimonial.gradientFrom} ${testimonial.gradientTo} ring-2 ring-white/10`}
+              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${testimonial.gradientFrom} ${testimonial.gradientTo} ring-2 ring-white/[0.06]`}
             >
               <span className="text-sm font-bold text-white select-none">
                 {testimonial.initials}
@@ -175,23 +175,14 @@ export default function Testimonials() {
   return (
     <section
       id="about"
-      className="relative py-24 sm:py-32 overflow-hidden"
+      className="relative py-24 sm:py-32 overflow-hidden bg-white/[0.03]"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-akton-950 via-akton-950/95 to-akton-950" />
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse 50% 50% at 50% 100%, rgba(6,182,212,0.12), transparent)',
-        }}
-      />
       {/* Decorative dots */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px)',
+            'radial-gradient(circle, rgba(0,0,0,0.3) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
         }}
       />
@@ -203,7 +194,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 16 }}
             animate={headerInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block rounded-full border border-cyber-500/30 bg-cyber-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyber-400 mb-4"
+            className="inline-block rounded-full border border-white/15 bg-white/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 mb-4"
           >
             Testimonials
           </motion.span>
@@ -214,9 +205,9 @@ export default function Testimonials() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
           >
-            <span className="text-white">What Our </span>
-            <span className="bg-gradient-to-r from-akton-400 to-cyber-400 bg-clip-text text-transparent">
-              Clients Say
+            <span className="text-white">Trusted by </span>
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Industry Leaders
             </span>
           </motion.h2>
 
@@ -226,7 +217,7 @@ export default function Testimonials() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-white/50"
           >
-            Trusted by forward-thinking companies to deliver real business outcomes.
+            Hear from the leaders who made their businesses AI-native with AktonAI.
           </motion.p>
         </div>
 

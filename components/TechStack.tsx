@@ -43,7 +43,7 @@ interface TechCardProps {
   description: string;
   className?: string;
   /** Use gradient accent color for the icon background */
-  accent?: "blue" | "cyan";
+  accent?: "green" | "mint";
   /** Whether this is the large hero card */
   hero?: boolean;
 }
@@ -53,40 +53,29 @@ function TechCard({
   title,
   description,
   className = "",
-  accent = "blue",
+  accent = "green",
   hero = false,
 }: TechCardProps) {
   const accentGradient =
-    accent === "cyan"
-      ? "from-cyber-400/20 to-cyber-500/5"
-      : "from-akton-400/20 to-akton-600/5";
+    accent === "mint"
+      ? "from-white/[0.06] to-white/[0.02]"
+      : "from-white/[0.06] to-white/[0.02]";
 
   const accentBorder =
-    accent === "cyan"
-      ? "group-hover:from-cyber-400/50 group-hover:to-cyber-500/20"
-      : "group-hover:from-akton-400/50 group-hover:to-akton-600/20";
+    accent === "mint"
+      ? "group-hover:border-white/20"
+      : "group-hover:border-white/20";
 
   const iconBg =
-    accent === "cyan"
-      ? "bg-cyber-400/10 text-cyber-400"
-      : "bg-akton-400/10 text-akton-400";
+    accent === "mint"
+      ? "bg-white/[0.05] text-white/70"
+      : "bg-white/[0.05] text-white/80";
 
   return (
     <motion.div
       variants={scaleIn}
-      className={`group relative overflow-hidden rounded-2xl ${className}`}
+      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] ${accentBorder} transition-all duration-500 ${className}`}
     >
-      {/* Gradient border that reveals on hover */}
-      <div
-        className={`absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] ${accentBorder} transition-all duration-500`}
-        style={{ padding: "1px" }}
-      >
-        <div className="h-full w-full rounded-2xl bg-akton-950/90" />
-      </div>
-
-      {/* Glass background */}
-      <div className="absolute inset-[1px] rounded-2xl bg-white/[0.03] backdrop-blur-xl" />
-
       {/* Hover glow */}
       <div
         className={`pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br ${accentGradient} opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100`}
@@ -136,7 +125,7 @@ function TechCard({
             {[0, 1, 2, 3, 4].map((i) => (
               <motion.div
                 key={i}
-                className="h-1 rounded-full bg-gradient-to-r from-akton-400 to-cyber-400"
+                className="h-1 rounded-full bg-gradient-to-r from-white to-gray-400"
                 animate={{
                   width: [12, 24, 12],
                   opacity: [0.4, 1, 0.4],
@@ -162,13 +151,18 @@ function TechCard({
 
 export default function TechStack() {
   return (
-    <section id="tech" className="relative overflow-hidden bg-akton-950 py-24 sm:py-32">
+    <section id="tech" className="relative overflow-hidden bg-[#0A0A0A] py-24 sm:py-32">
+      {/* Fade-in from top */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] to-transparent z-10" />
+      {/* Fade-out to bottom */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent z-10" />
+
       {/* Background radial gradient */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(51,102,255,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%)",
         }}
       />
 
@@ -185,12 +179,14 @@ export default function TechStack() {
       >
         {/* Section header */}
         <motion.div variants={fadeUp} className="mx-auto max-w-2xl text-center">
-          <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-akton-400">
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
             Technology
           </span>
           <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Built on{" "}
-            <span className="gradient-text">Cutting-Edge AI</span>
+            Powered by{" "}
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              Cutting-Edge AI
+            </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-white/50">
             Our platform combines the most advanced AI technologies into a
@@ -207,7 +203,7 @@ export default function TechStack() {
             icon={<Database className="h-5 w-5" />}
             title="Vector Databases"
             description="Lightning-fast semantic search across your entire business data landscape."
-            accent="cyan"
+            accent="mint"
           />
 
           {/* Large center card — spans 2 cols and 2 rows */}
@@ -215,7 +211,7 @@ export default function TechStack() {
             icon={<Brain className="h-8 w-8" />}
             title="Large Language Models"
             description="Powered by GPT-4, Claude, and custom fine-tuned models for maximum accuracy and reliability."
-            accent="blue"
+            accent="green"
             hero
             className="sm:col-span-2 sm:row-span-2"
           />
@@ -225,7 +221,7 @@ export default function TechStack() {
             icon={<GitMerge className="h-5 w-5" />}
             title="RAG Pipeline"
             description="Retrieval-augmented generation for accurate, grounded responses every time."
-            accent="blue"
+            accent="green"
           />
 
           {/* Row 2 — two small cards fill the remaining slots */}
@@ -235,7 +231,7 @@ export default function TechStack() {
             icon={<Bot className="h-5 w-5" />}
             title="Multi-Agent Systems"
             description="Coordinated AI agents that collaborate to solve complex tasks autonomously."
-            accent="cyan"
+            accent="mint"
           />
 
           {/* Small card: Real-Time Analytics */}
@@ -243,7 +239,7 @@ export default function TechStack() {
             icon={<Activity className="h-5 w-5" />}
             title="Real-Time Analytics"
             description="Live monitoring and optimization of agent performance metrics."
-            accent="blue"
+            accent="green"
           />
         </div>
       </motion.div>
