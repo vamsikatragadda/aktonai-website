@@ -5,7 +5,6 @@ import Services from '@/components/Services'
 import TechStack from '@/components/TechStack'
 import HowItWorks from '@/components/HowItWorks'
 import Results from '@/components/Results'
-import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
@@ -19,7 +18,6 @@ export default function Home() {
       <TechStack />
       <HowItWorks />
       <Results />
-      <Testimonials />
       <CTA />
       <Footer />
     </main>

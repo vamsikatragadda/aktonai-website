@@ -16,33 +16,33 @@ const services: Service[] = [
     icon: Bot,
     title: "Custom AI Agents",
     description:
-      "Purpose-built AI agents tailored to your specific business processes, trained on your data and integrated with your existing tools.",
-    accentColor: "from-akton-400 to-akton-600",
-    glowColor: "rgba(51, 102, 255, 0.15)",
+      "Purpose-built AI agents trained on your data that handle customer inquiries, process orders, and manage workflows autonomously.",
+    accentColor: "from-white/60 to-white",
+    glowColor: "rgba(255, 255, 255, 0.04)",
   },
   {
     icon: Workflow,
-    title: "Workflow Automation",
+    title: "Intelligent Automation",
     description:
-      "Eliminate manual tasks and streamline operations with intelligent automation that learns and adapts to your business needs.",
-    accentColor: "from-cyber-400 to-akton-400",
-    glowColor: "rgba(6, 182, 212, 0.15)",
+      "Streamline operations with AI that learns your processes, eliminates bottlenecks, and continuously optimizes for efficiency.",
+    accentColor: "from-gray-400 to-white/80",
+    glowColor: "rgba(255, 255, 255, 0.04)",
   },
   {
     icon: MessageSquare,
-    title: "Customer Engagement",
+    title: "Conversational AI",
     description:
-      "24/7 AI-powered customer interactions across chat, email, and voice that feel natural and drive conversions.",
-    accentColor: "from-akton-300 to-cyber-500",
-    glowColor: "rgba(142, 181, 255, 0.15)",
+      "Deploy AI across chat, email, voice, and SMS that engages customers naturally and drives conversions 24/7.",
+    accentColor: "from-gray-300 to-gray-500",
+    glowColor: "rgba(255, 255, 255, 0.03)",
   },
   {
     icon: BarChart3,
-    title: "Data Intelligence",
+    title: "AI Analytics & Insights",
     description:
-      "Transform raw data into actionable insights with AI agents that monitor, analyze, and report on your key business metrics.",
-    accentColor: "from-cyber-500 to-akton-500",
-    glowColor: "rgba(6, 182, 212, 0.15)",
+      "Real-time dashboards and predictive analytics powered by AI agents that monitor, analyze, and surface what matters most.",
+    accentColor: "from-gray-400 to-white/70",
+    glowColor: "rgba(255, 255, 255, 0.03)",
   },
 ];
 
@@ -87,13 +87,13 @@ function ServiceCard({
       />
 
       {/* Card */}
-      <div className="relative h-full rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] p-8 transition-all duration-500 group-hover:border-akton-500/50 group-hover:bg-white/[0.06] overflow-hidden">
+      <div className="relative h-full rounded-2xl bg-white/[0.03] border border-white/10 shadow-sm p-8 transition-all duration-500 hover:border-white/20 group-hover:shadow-white/5 group-hover:shadow-md overflow-hidden">
         {/* Subtle gradient overlay on hover */}
-        <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-br from-akton-500/[0.05] via-transparent to-cyber-400/[0.05]" />
+        <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.02]" />
 
         {/* Decorative corner accent */}
         <div className="absolute top-0 right-0 w-32 h-32 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-akton-500/10 via-transparent to-transparent rounded-tr-2xl" />
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/[0.05] via-transparent to-transparent rounded-tr-2xl" />
         </div>
 
         {/* Icon container */}
@@ -101,8 +101,8 @@ function ServiceCard({
           <div
             className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${service.accentColor} p-[1px]`}
           >
-            <div className="flex items-center justify-center w-full h-full rounded-[11px] bg-akton-950/90 group-hover:bg-akton-950/70 transition-colors duration-500">
-              <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+            <div className="flex items-center justify-center w-full h-full rounded-[11px] bg-[#0A0A0A] group-hover:bg-white/[0.05] transition-colors duration-500">
+              <Icon className="w-6 h-6 text-white/90" strokeWidth={1.5} />
             </div>
           </div>
 
@@ -119,7 +119,7 @@ function ServiceCard({
           <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
             {service.title}
           </h3>
-          <p className="text-white/50 leading-relaxed text-[15px] group-hover:text-white/65 transition-colors duration-500">
+          <p className="text-white/50 leading-relaxed text-[15px] group-hover:text-white/60 transition-colors duration-500">
             {service.description}
           </p>
         </div>
@@ -139,15 +139,20 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 sm:py-32 lg:py-40 overflow-hidden"
+      className="relative py-28 sm:py-32 lg:py-40 overflow-hidden bg-[#0A0A0A]"
     >
+      {/* Fade-in from top */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0A0A0A] to-transparent z-10" />
+      {/* Fade-out to bottom */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent z-10" />
+
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-akton-950 via-[#070c24] to-akton-950" />
-      <div className="absolute inset-0 dot-pattern opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A] to-[#0A0A0A]" />
+      <div className="absolute inset-0 dot-pattern opacity-[0.03]" />
 
       {/* Ambient glow orbs */}
-      <div className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-akton-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-cyber-400/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -157,7 +162,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-akton-400 text-sm font-medium tracking-widest uppercase mb-4"
+            className="text-white/80 text-sm font-medium tracking-widest uppercase mb-4"
           >
             What We Do
           </motion.p>
@@ -167,10 +172,11 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
           >
-            AI Agents Built{" "}
-            <span className="gradient-text">for Your Business</span>
+            End-to-End{" "}
+            <span className="gradient-text">AI Solutions</span>{" "}
+            for Your Business
           </motion.h2>
 
           <motion.p
@@ -178,11 +184,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-white/45 leading-relaxed text-balance"
+            className="text-lg text-white/50 leading-relaxed text-balance"
           >
-            From intelligent automation to real-time analytics, our AI agents
-            handle the heavy lifting so your team can focus on what matters
-            most -- growing your business.
+            We embed AI into every layer of your operations—from customer-facing
+            agents to back-office automation—making your business truly AI-native.
           </motion.p>
         </div>
 
@@ -202,12 +207,12 @@ export default function Services() {
           className="relative"
         >
           {/* Outer glow */}
-          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-akton-500/20 via-cyber-400/20 to-akton-500/20 blur-sm" />
+          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-white/10 via-white/5 to-white/10 blur-sm" />
 
           {/* Banner container */}
-          <div className="relative rounded-2xl bg-gradient-to-r from-white/[0.04] via-white/[0.07] to-white/[0.04] backdrop-blur-xl border border-white/[0.08] overflow-hidden">
+          <div className="relative rounded-2xl bg-white/[0.03] border border-white/10 shadow-sm overflow-hidden">
             {/* Inner shimmer line at top */}
-            <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-akton-400/50 to-transparent" />
+            <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
             <div className="grid grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => (
@@ -222,10 +227,10 @@ export default function Services() {
                   }}
                   className={`relative flex flex-col items-center justify-center py-10 px-6 ${
                     index < stats.length - 1
-                      ? "border-r border-white/[0.06]"
+                      ? "border-r border-white/10"
                       : ""
-                  } ${index < 2 ? "lg:border-b-0 border-b border-white/[0.06]" : ""} ${
-                    index === 2 ? "border-r border-white/[0.06] lg:border-b-0" : ""
+                  } ${index < 2 ? "lg:border-b-0 border-b border-white/10" : ""} ${
+                    index === 2 ? "border-r border-white/10 lg:border-b-0" : ""
                   }`}
                 >
                   <span className="text-3xl sm:text-4xl font-bold gradient-text mb-2">
