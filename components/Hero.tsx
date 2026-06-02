@@ -112,12 +112,14 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
           {/* Primary CTA */}
-          <button className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-white to-gray-200 px-8 py-3.5 text-base font-semibold text-black shadow-lg shadow-white/10 transition-all duration-300 hover:shadow-white/15 hover:shadow-xl hover:brightness-110 active:scale-[0.98]">
+          <a
+            href="#book-a-call"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-white to-gray-200 px-8 py-3.5 text-base font-semibold text-black shadow-lg shadow-white/10 transition-all duration-300 hover:shadow-white/15 hover:shadow-xl hover:brightness-110 active:scale-[0.98]"
+          >
             <span className="relative z-10">Get Started</span>
             <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            {/* Hover glow overlay */}
             <span className="absolute inset-0 z-0 bg-gradient-to-r from-gray-200 to-gray-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </button>
+          </a>
         </motion.div>
 
         {/* Trust indicator */}

@@ -10,7 +10,7 @@ const footerLinks = {
   ],
   Company: [
     { label: 'About', href: '#' },
-    { label: 'Contact', href: 'mailto:shalesh@akidev.com' },
+    { label: 'Contact', href: '#book-a-call' },
   ],
 }
 
