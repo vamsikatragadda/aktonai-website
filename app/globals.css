@@ -89,6 +89,33 @@
   }
 }
 
+/* Calendly embed — outside Tailwind layers so third-party overrides stay reliable */
+.calendly-embed-shell {
+  background-color: #050505;
+}
+
+.calendly-inline-widget,
+.calendly-inline-widget iframe {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.calendly-inline-widget {
+  min-height: 630px;
+}
+
+@media (min-width: 640px) {
+  .calendly-inline-widget {
+    min-height: 700px;
+  }
+}
+
+.calendly-inline-widget iframe {
+  display: block;
+  border: none;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;

@@ -6,6 +6,7 @@ import TechStack from '@/components/TechStack'
 import HowItWorks from '@/components/HowItWorks'
 import Results from '@/components/Results'
 import CTA from '@/components/CTA'
+import BookACall from '@/components/BookACall'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <HowItWorks />
       <Results />
       <CTA />
+      <BookACall />
       <Footer />
     </main>
   )
